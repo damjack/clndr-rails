@@ -75,7 +75,7 @@ class Clndr
     end
 
     content_tag(:div,nil,args)do
-      content_tag(:div,nil,id:"#{@name}-clndr",class:"clearfix #{css_class}")+
+      content_tag(:div,nil,:id => "#{@name}-clndr",:class => "clearfix #{css_class}")+
       javascript_tag("var #{@name} = $('##{@name}-clndr').clndr({
         #{'template:'+@template+',' unless @template.nil?}
         #{'weekOffset:'+@week_offset.to_s+',' if @week_offset==1}
@@ -181,7 +181,7 @@ class Clndr
   # *other_data some data for tour access in template
   def add_event(date,title,*other_data)
     date = Clndr.date_format date
-    event = {date: date,title:title}
+    event = {:date => date,:title => title}
     event.merge! *other_data if other_data.length>0
     @events.push event
 
@@ -191,7 +191,7 @@ class Clndr
   def add_multiday_event(start_date,end_date,title,*other_data)
     start_date = Clndr.date_format start_date
     end_date = Clndr.date_format end_date
-    event = {start_date:start_date,end_date:end_date,title:title}
+    event = {:start_date => start_date,:end_date => end_date,:title => title}
     event.merge! *other_data if other_data.length >0
     @has_multiday ||= true
     @events.push event

@@ -129,6 +129,7 @@
 .mini-clndr-template .clndr .controls {
   background-color: #69a776;
   color: white;
+	width: 100%;
 }
 .mini-clndr-template .clndr .controls .clndr-previous-button,
 .mini-clndr-template .clndr .controls .clndr-next-button {
@@ -368,9 +369,6 @@
   visibility: hidden;
   line-height: 0;
   height: 0;
-}
-.clearfix {
-  display: inline-block;
 }
 html[xmlns] .clearfix {
   display: block;
